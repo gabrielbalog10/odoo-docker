@@ -1,10 +1,12 @@
 FROM odoo:latest
 
+USER root
+
 # Install some deps, lessc and less-plugin-clean-css, and wkhtmltopdf
 RUN set -x; \
 	apt-get update \
 	&& apt-get install -y --no-install-recommends \
-	&& curl https://raw.githubusercontent.com/BradooTech/scripts/master/dependencias/ubuntu/apt3 | xargs apt install -y --no-install-recommends \
+	&& curl https://raw.githubusercontent.com/BradooTech/scripts/master/dependencias/ubuntu/apt3 | xargs apt install -y --no-install-recommends
 
 RUN set -x; \
 	pip3 install --upgrade pip \
