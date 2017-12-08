@@ -6,19 +6,14 @@ USER root
 RUN set -x; \
 	apt-get update \
 	&& apt-get install -y --no-install-recommends \
-	&& curl https://raw.githubusercontent.com/BradooTech/scripts/master/dependencias/ubuntu/apt3 | xargs apt install -y --no-install-recommends
+	&& curl https://raw.githubusercontent.com/gabrielbalog/odoo-docker/master/apt | xargs apt install -y --no-install-recommends
 
 RUN set -x; \
 	pip3 install --upgrade pip \
 	&& pip3 install --upgrade setuptools \
 	&& curl https://raw.githubusercontent.com/BradooTech/scripts/master/dependencias/ubuntu/pip3 | xargs pip install
 
-
-# Copy entrypoint script and Odoo configuration file
-RUN pip3 install num2words
-COPY ./entrypoint.sh /
-COPY ./odoo.conf /etc/odoo/
-RUN chown odoo /etc/odoo/odoo.conf
+EXPOSE 8069 8071
 
 VOLUME ./modules:/mnt/extra-addons
 VOLUME odoo_filestore:/var/lib/odoo
