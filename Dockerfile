@@ -6,12 +6,13 @@ USER root
 RUN set -x; \
 	apt-get update \
 	&& apt-get install -y --no-install-recommends \
-	&& curl https://raw.githubusercontent.com/gabrielbalog/odoo-docker/master/apt | xargs apt install -y --no-install-recommends
+	&& curl https://raw.githubusercontent.com/gabrielbalog/odoo-docker/master/apt | xargs apt-get install -y --no-install-recommends \
+	&& pip3 install wheel
 
 RUN set -x; \
 	pip3 install --upgrade pip \
 	&& pip3 install --upgrade setuptools \
-	&& curl https://raw.githubusercontent.com/BradooTech/scripts/master/dependencias/ubuntu/pip3 | xargs pip install
+	&& curl https://raw.githubusercontent.com/BradooTech/scripts/master/dependencias/ubuntu/pip3 | xargs pip3 install
 
 EXPOSE 8069 8071
 
