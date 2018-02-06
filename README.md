@@ -10,43 +10,43 @@ Recomenda-se seguir o tutorial oficial do docker-ce para sua instalação, mas p
 
 Atualize o sistema:
 
-	``sudo apt-get update``
+	sudo apt-get update
 
 Instale os pacotes necessários:
 
-	``sudo apt-get install apt-transport-https ca-certificates curl software-properties-common``
+	sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
 
 Adicione a key do docker no sistema:
 
-	``sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -``
+	sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 Adicione o repositório:
 
-	``sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu  $(lsb_release -cs) stable"``
+	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu  $(lsb_release -cs) stable"
 
 Atualizae os repositórios:
 
-	``sudo apt-get update``
+	sudo apt-get update
 
 Instale o docker-ce:
 
-	``sudo apt-get install docker-ce``
+	sudo apt-get install docker-ce
 
 Verifique se o docker foi instalado corretamente:
 
-	``sudo docker -v``
+	sudo docker -v
 
 Adicione o usuario docker:
 
-	``sudo groupadd docker``
+	sudo groupadd docker
 
 Adicione o usuario no grupo de root:
 	
-    ``sudo usermod -aG docker $USER``
+    sudo usermod -aG docker $USER
 
 Deslogue do usuario e logue novamente, execute o comando abaixo:
 
-	`` docker -v``
+	 docker -v
 
 Caso o comando tenha sido bem sucedido você não precisará mais usar o sudo para executar comandos docker.
 
@@ -54,12 +54,12 @@ Caso o comando tenha sido bem sucedido você não precisará mais usar o sudo pa
 
 Faça o download do binário do docker-compose e adiciona no bin do ubuntu:
 
-	``curl -L https://github.com/docker/compose/releases/download/1.19.0-rc3/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose``
+	curl -L https://github.com/docker/compose/releases/download/1.19.0-rc3/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 
 Da permissão para execução:
 
-	``chmod +x /usr/local/bin/docker-compose``
+	chmod +x /usr/local/bin/docker-compose
 
 Verifique se funciona corretamente:
 
-	``docker-compose -v``
+	docker-compose -v
